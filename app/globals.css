@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --electric: #06D6A0;
+  --cyan: #22D3EE;
+  --violet: #10B981;
+  --neon-blue: #34D399;
+  --neon-cyan: #22D3EE;
+  --neon-violet: #6EE7B7;
+  --neon-pink: #2DD4BF;
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-hover: rgba(255, 255, 255, 0.92);
+  --border: rgba(6, 214, 160, 0.15);
+  --shadow-glow: 0 8px 32px rgba(6, 214, 160, 0.1);
+  --bg: #ffffff;
+  --text: #0A0A0A;
+  --text-muted: #6B7280;
+  --text-subtle: #9CA3AF;
+  --nav-bg: rgba(255, 255, 255, 0.85);
+}
+
+/* ─── Dark Mode ──────────────────────────────── */
+[data-theme="dark"] {
+  --surface: rgba(12, 22, 18, 0.80);
+  --surface-hover: rgba(18, 32, 26, 0.92);
+  --border: rgba(6, 214, 160, 0.18);
+  --shadow-glow: 0 8px 32px rgba(6, 214, 160, 0.08);
+  --bg: #080F0C;
+  --text: #E8F5F0;
+  --text-muted: #9CA3AF;
+  --text-subtle: #6B7280;
+  --nav-bg: rgba(8, 15, 12, 0.88);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ─── Typography ─────────────────────────────── */
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  line-height: 1.15;
+}
+
+/* ─── Scrollbar ──────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #06D6A0, #22D3EE);
+  border-radius: 3px;
+}
+
+/* ─── Glass card ─────────────────────────────── */
+.glass {
+  background: var(--surface);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-glow);
+}
+
+.glass:hover {
+  background: var(--surface-hover);
+  box-shadow: 0 16px 48px rgba(6, 214, 160, 0.15);
+}
+
+/* ─── Gradient text ──────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #06D6A0 0%, #22D3EE 50%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #22D3EE 0%, #06D6A0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Neon border ────────────────────────────── */
+.neon-border {
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.neon-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #06D6A0, #22D3EE, #10B981);
+  z-index: -1;
+}
+
+/* ─── Glow button ────────────────────────────── */
+.btn-glow {
+  background: linear-gradient(135deg, #06D6A0, #22D3EE);
+  color: #0A0A0A;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(6, 214, 160, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(6, 214, 160, 0.55);
+}
+
+.btn-glow:hover::after {
+  opacity: 1;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #06D6A0;
+  border: 1.5px solid #06D6A0;
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(6, 214, 160, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(6, 214, 160, 0.2);
+}
+
+/* ─── Section spacing ────────────────────────── */
+.section {
+  padding: 6rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-full {
+  padding: 6rem 1.5rem;
+}
+
+/* ─── Tag pill ───────────────────────────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, rgba(6, 214, 160, 0.12), rgba(34, 211, 238, 0.12));
+  color: #059669;
+  border: 1px solid rgba(6, 214, 160, 0.25);
+}
+
+[data-theme="dark"] .tag {
+  color: #34D399;
+  border-color: rgba(6, 214, 160, 0.3);
+}
+
+/* ─── Three.js canvas ────────────────────────── */
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ─── Energy trail canvas ────────────────────── */
+#trail-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ─── Main content above canvases ────────────── */
+main {
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Dark mode text overrides ───────────────── */
+/* Tailwind gray classes are hardcoded, so we override them globally */
+[data-theme="dark"] .text-gray-900 {
+  color: #E8F5F0 !important;
+}
+
+[data-theme="dark"] .text-gray-800 {
+  color: #D1FAE5 !important;
+}
+
+[data-theme="dark"] .text-gray-700 {
+  color: #A7F3D0 !important;
+}
+
+[data-theme="dark"] .text-gray-600 {
+  color: #9CA3AF !important;
+}
+
+[data-theme="dark"] .text-gray-500 {
+  color: #6B7280 !important;
+}
+
+[data-theme="dark"] .text-gray-400 {
+  color: #4B5563 !important;
+}
+
+[data-theme="dark"] .border-black\/5 {
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+[data-theme="dark"] .bg-red-400\/60 {
+  background-color: rgba(248, 113, 113, 0.5) !important;
+}
+
+[data-theme="dark"] .bg-yellow-400\/60 {
+  background-color: rgba(250, 204, 21, 0.5) !important;
+}
