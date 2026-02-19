@@ -41,7 +41,7 @@ export default function ContactSection() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-14"
                 >
-                    <span className="tag mb-4 inline-block">Let's Connect</span>
+                    <span className="tag mb-4 inline-block">Let&apos;s Connect</span>
                     <h2 className="text-4xl md:text-5xl font-serif font-black text-gray-900">
                         Get in <span className="gradient-text">Touch</span>
                     </h2>
@@ -73,7 +73,7 @@ export default function ContactSection() {
 
                     <div className="relative z-10 p-10 text-center">
                         <p className="text-lg font-serif text-gray-700 mb-2 italic">
-                            "I don't just study models, I build the systems around them."
+                            &quot;I don&apos;t just study models, I build the systems around them.&quot;
                         </p>
                         <p className="text-gray-500 text-sm mb-8">— IBK</p>
                         <a

@@ -66,7 +66,7 @@ export default function ExperienceSection() {
                 >
                     <span className="tag mb-4 inline-block">Career</span>
                     <h2 className="text-4xl md:text-5xl font-serif font-black text-gray-900">
-                        Where I've{' '}
+                        Where I&apos;ve{' '}
                         <span className="gradient-text">Worked</span>
                     </h2>
                     <p className="mt-3 text-gray-500 max-w-lg mx-auto">

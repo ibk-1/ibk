@@ -162,7 +162,7 @@ export default function ProjectsSection() {
                 >
                     <span className="tag mb-4 inline-block">Selected Work</span>
                     <h2 className="text-4xl md:text-5xl font-serif font-black text-gray-900">
-                        What I've{' '}
+                        What I&apos;ve{' '}
                         <span className="gradient-text">Built</span>
                     </h2>
                     <p className="mt-3 text-gray-500 max-w-lg mx-auto">

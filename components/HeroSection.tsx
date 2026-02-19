@@ -55,7 +55,7 @@ export default function HeroSection() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.35, duration: 0.7, ease: 'easeOut' }}
             >
-                AI-Native Builder &amp; Data Science Master's Student
+                AI-Native Builder &amp; Data Science Master&apos;s Student
             </motion.p>
 
             {/* Punchline */}
@@ -65,7 +65,7 @@ export default function HeroSection() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.5, duration: 0.7, ease: 'easeOut' }}
             >
-                "I don't just study models, I build the systems around them."
+                &quot;I don&apos;t just study models, I build the systems around them.&quot;
             </motion.p>
 
             {/* CTA buttons */}
